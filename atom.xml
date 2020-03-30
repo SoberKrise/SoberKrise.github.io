@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-30T08:37:12.511Z</updated>
+  <updated>2020-03-30T12:01:30.631Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,9 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>About me</title>
+    <link href="http://yoursite.com/2020/about/"/>
+    <id>http://yoursite.com/2020/about/</id>
+    <published>2020-03-30T11:52:12.000Z</published>
+    <updated>2020-03-30T12:01:30.631Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>A Student of HFUT, live in HeBei,China.</p></blockquote><p>姓名：赵祎康<br>QQ：861071003<br>微信：k861071003<br>手机：15175910135<br>GitHub：</p><p><img src="https://i.loli.net/2020/03/30/mBIcs7gPUwSZ9DC.jpg" alt="DVA.jpg"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;A Student of HFUT, live in HeBei,China.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;姓名：赵祎康&lt;br&gt;QQ：861071003&lt;br&gt;微信：k861071003&lt;br&gt;手机：15175910135&lt;br&gt;Gi
+      
+    
+    </summary>
+    
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2020/ck8eeblhn0000k4uldqzqcj57/"/>
-    <id>http://yoursite.com/2020/ck8eeblhn0000k4uldqzqcj57/</id>
+    <link href="http://yoursite.com/2020/ck8ef9rf30003fwulbnhb1poi/"/>
+    <id>http://yoursite.com/2020/ck8ef9rf30003fwulbnhb1poi/</id>
     <published>2020-03-30T08:37:12.511Z</published>
     <updated>2020-03-30T08:37:12.511Z</updated>
     
