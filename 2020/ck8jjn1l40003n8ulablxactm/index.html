@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    第一次搭建博客心得 |  Sober
+    在VM上为CentOS7设置静态IP |  Sober
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -51,7 +51,7 @@ var _hmt = _hmt || [];
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-第一次搭建博客心得" class="article article-type-post" itemscope
+  <article id="post-在VM上对CentOs7设置静态ip" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -59,7 +59,7 @@ var _hmt = _hmt || [];
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  第一次搭建博客心得
+  在VM上为CentOS7设置静态IP
 </h1>
  
 
@@ -68,12 +68,12 @@ var _hmt = _hmt || [];
 
     
     <div class="article-meta">
-      <a href="/2020/ck8fm7qck000a2gulfdb4f95n/" class="article-date">
-  <time datetime="2020-03-30T12:13:26.000Z" itemprop="datePublished">2020-03-30</time>
+      <a href="/2020/ck8jjn1l40003n8ulablxactm/" class="article-date">
+  <time datetime="2020-04-03T00:47:15.000Z" itemprop="datePublished">2020-04-03</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%BF%83%E5%BE%97/">心得</a>
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
   </div>
 
       
@@ -83,7 +83,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">596字</span>
+            <span class="post-count">563字</span>
         </span>
     </span>
 
@@ -103,6 +103,8 @@ var _hmt = _hmt || [];
 
     
     
+    <div class="tocbot"></div>
+
 
 
 
@@ -115,11 +117,33 @@ var _hmt = _hmt || [];
       
 
       
-      <p>​        怎么说呢，这个博客我搭了整整一天，其实时间主要浪费在了找Git库，原本在GitHub上完成了部署，然后由于GitHub乌龟似的速度以及需要翻墙才能达到预期的效果，所以我决定在国内的Git库中进行部署例如（Gitee，Coding），显而易见，我失败了，并没有成功地在国内Git库中部署。</p>
-<p>​        我在一开始最先尝试的是Gitee，不得不说作为“国内版GitHub”，Gitee的确有一定的潜力，而且由于服务器在国内，所以部署在这个上面速度飞起。在部署过程中遇到的第一个问题就是css无法正常显示，然后问了问度娘，顺利解决（url 添加自己的网站域名，然后在root下更新根目录）但后来问题又出现了，自己上传到Gitee中的图片无法正常解析，这个问题几乎困扰了我一下午，然后各种查资料逛论坛和别人的博客，最后以失败告终，不知道是别人没有遇到过这个问题还是自己的语文表达能力较差，始终没有找到合适的解决方案，以后有时间并且进一步了解web后，在寻找解决方案，毕竟部署到国内确实快的很。</p>
-<p>​        后来我看到有的大佬推荐了Coding，也是一个国内的Git管理仓，然而，可能是自己对GIt的不熟悉，导致并没有找到Coding Page的启动位置，然后也是查询无果，又放弃了这个。</p>
-<p>​        其实我也有想过租个服务器什么的，把网站搭到服务器上面，后来又觉得自己半途而废的尿性，果断放弃了，而且还要Money。其实主要原因是自己建立这个主要是写博客用的，也用不到防黑客啊之类的，而且本身自己对Web开发也属于初探阶段，前期投入太多的精力也有些不合适。</p>
-<p>​    害，既然花了这么长时间建了博客还是不要浪费的好。抓紧提升技术，把博客建的再好看些。以后这个博客就分享分享自己学习内容啊，生活经历啊，还有旅游啥的，奥里给</p>
+      <h1 id="一、为什么要设置静态IP"><a href="#一、为什么要设置静态IP" class="headerlink" title="一、为什么要设置静态IP"></a>一、为什么要设置静态IP</h1><p>​    众所周知，平常的IP都是自动分配的，你每次登录用户的时候都会自动分配一个不同的IP，而一般对于Linux系统来讲，我们都是通过xshell等远程管理工具进行管理，因此设置一个静态IP有助于自己远程管理Linux系统</p>
+<h1 id="二、更改VM-中虚拟网络编辑器设置"><a href="#二、更改VM-中虚拟网络编辑器设置" class="headerlink" title="二、更改VM 中虚拟网络编辑器设置"></a>二、更改VM 中虚拟网络编辑器设置</h1><p>​    首先打开VM的编辑页面，然后选择虚拟网络编辑器。</p>
+<p><img src="https://i.loli.net/2020/04/03/aO3Tb9j8LlydEMG.png" alt="7_ZF5KZBE~_JAS____O_SKJ.png"></p>
+<p><img src="https://i.loli.net/2020/04/03/wVQoWaSKN6b23jp.png" alt="Annotation 2020-04-03 085644.png"></p>
+<p>​    选择右下角的更改设置（需要管理员权限）</p>
+<p><img src="https://i.loli.net/2020/04/03/MYKG7lwF53cpuZE.png" alt="_LDRZP6WFOWH_CQ__F9GJ_F.png"></p>
+<p>​    然后选择虚拟网卡VMnet8，然后VMnet信息改为NAT模式，然后设置子网IP和子网掩码</p>
+<p><img src="https://i.loli.net/2020/04/03/6frYtd7JX9iqGg8.png" alt="O_92VNL@`YU`_U_7Z_B37C9.png"></p>
+<p>​    进入NAT设置</p>
+<p><img src="https://i.loli.net/2020/04/03/U5pahrYkO9Ty1CK.png" alt="_D74KB7CZ146VQ5V3NF01BT.png"></p>
+<p>​    设置网关，网关前三个字段一定要和自己的子网IP的前三个字段一样，最后那个字段随便取，但一定要记住这个网关IP，后面在CentOS中设置的时候需要用到这个IP</p>
+<p><img src="https://i.loli.net/2020/04/03/Yn43aplArLDXq8I.png" alt="A_YD_DW_OV`GQKIUBI6`_W6.png"></p>
+<p>​    打开自己的CentOS，然后找到自己的网卡文件(vim 的使用自行百度)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</span><br></pre></td></tr></table></figure>
+
+<p>配置文件如下图</p>
+<p><img src="https://i.loli.net/2020/04/03/QvEt7VXiRlWI81q.png" alt="_1MR7C_HE8__N_I29_9X664.png"></p>
+<p><img src="https://i.loli.net/2020/04/03/siTtcI19qUbBlHP.png" alt="IS6Q0CP_7W_7__4_@29___2.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">TYPE&#x3D;Ethernet</span><br><span class="line">PROXY_METHOD&#x3D;none</span><br><span class="line">BROWSER_ONLY&#x3D;no</span><br><span class="line">BOOTPROTO&#x3D;static #将dhcp改为static，dhcp是动态分配IP协议的意思</span><br><span class="line">DEFROUTE&#x3D;yes</span><br><span class="line">IPV4_FAILURE_FATAL&#x3D;no</span><br><span class="line">IPV6INIT&#x3D;yes</span><br><span class="line">IPV6_AUTOCONF&#x3D;yes</span><br><span class="line">IPV6_DEFROUTE&#x3D;yes</span><br><span class="line">IPV6_FAILURE_FATAL&#x3D;no</span><br><span class="line">IPV6_ADDR_GEN_MODE&#x3D;stable-privacy</span><br><span class="line">NAME&#x3D;ens33</span><br><span class="line">UUID&#x3D;0c8350ca-5130-4f18-8be3-ce5568332dbf</span><br><span class="line">DEVICE&#x3D;ens33</span><br><span class="line">ONBOOT&#x3D;yes #设置为开机自启动</span><br><span class="line">#----下面为自己的添加的信息-------#</span><br><span class="line">IPADDR&#x3D;192.168.127.100 #设置自己想要设置的静态IP，不过IP前三字段一定要与子网IP前三字段保持一致</span><br><span class="line">GATEWAY&#x3D;192.168.127.2 #这里设置的网关与你之前设置的网关要保持一致</span><br><span class="line">NETMASK&#x3D;255.255.255.0 #设置子网掩码</span><br><span class="line">DNS1&#x3D;8.8.8.8 #Google的DNS服务器</span><br><span class="line">DNS2&#x3D;114.114.114.114 #国内中国移动、电信、网通的通用DNS服务器</span><br></pre></td></tr></table></figure>
+
+<p>​    当所有文件配置完成后,输入下面命令重启网络服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service network start</span><br></pre></td></tr></table></figure>
+
+<p>​    最后检测是否能正确联网,ping一下百度即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
+
+<p>​    如果在配置过程中发现了还是不能联网,建议将虚拟网络编辑器还原 默认设置后重新进行配置(我就是这样的)</p>
 
       
       <!-- reward -->
@@ -185,14 +209,14 @@ var _hmt = _hmt || [];
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/ck8fm7qck000a2gulfdb4f95n/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/ck8jjn1l40003n8ulablxactm/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BF%83%E5%BE%97/" rel="tag">心得</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
 
 
     </footer>
@@ -203,19 +227,10 @@ var _hmt = _hmt || [];
   
   <nav class="article-nav">
     
-      <a href="/2020/ck8fm7qbo00012gul7ihh7938/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Java学习笔记之Lambda
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/about/" class="article-nav-link">
+      <a href="/2020/ck8jjn1l90007n8ul8yjx3s0x/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">About me</div>
+        <div class="article-nav-title">Java学习笔记之Lambda</div>
       </a>
     
   </nav>

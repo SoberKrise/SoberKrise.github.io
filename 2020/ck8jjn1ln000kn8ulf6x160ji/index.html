@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Java学习笔记之Lambda |  Sober
+    第一次搭建博客心得 |  Sober
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -51,7 +51,7 @@ var _hmt = _hmt || [];
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-Java-Lambda" class="article article-type-post" itemscope
+  <article id="post-第一次搭建博客心得" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -59,7 +59,7 @@ var _hmt = _hmt || [];
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Java学习笔记之Lambda
+  第一次搭建博客心得
 </h1>
  
 
@@ -68,12 +68,12 @@ var _hmt = _hmt || [];
 
     
     <div class="article-meta">
-      <a href="/2020/ck8fm7qbo00012gul7ihh7938/" class="article-date">
-  <time datetime="2020-03-31T08:01:18.000Z" itemprop="datePublished">2020-03-31</time>
+      <a href="/2020/ck8jjn1ln000kn8ulf6x160ji/" class="article-date">
+  <time datetime="2020-03-30T12:13:26.000Z" itemprop="datePublished">2020-03-30</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Java/">Java</a>
+    <a class="article-category-link" href="/categories/%E5%BF%83%E5%BE%97/">心得</a>
   </div>
 
       
@@ -83,7 +83,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.7k字</span>
+            <span class="post-count">596字</span>
         </span>
     </span>
 
@@ -92,7 +92,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">6分钟</span>
+            <span class="post-count">2分钟</span>
         </span>
     </span>
 </div>
@@ -103,8 +103,6 @@ var _hmt = _hmt || [];
 
     
     
-    <div class="tocbot"></div>
-
 
 
 
@@ -117,93 +115,11 @@ var _hmt = _hmt || [];
       
 
       
-      <p>﻿# lambda表达式</p>
-<h2 id="（一）Lambda表达式概述"><a href="#（一）Lambda表达式概述" class="headerlink" title="（一）Lambda表达式概述"></a>（一）Lambda表达式概述</h2><p>以前调用Java方法时，实参必须是一个进本数据类型或者是一个对象，现在可以给一些引用数据的形参，传“一段代码”，而不是“一个对象”。这段代码是一个函数（方法）的方法体。</p>
-<p>Lambda表达式可以极大的减少代码的冗余，同时可读性也好过冗长的匿名类</p>
-<p>引入函数式风格，但并不是所有的接口都可以运用lambda表达式，只有实现SAM（single abstract method，函数式接口）接口才能实现此方法，只含有单独的抽象方法，但是可以含有默认方法和静态方法等。</p>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>（1）只有函数式接口才能使用lambda表达式</p>
-<p>（2）Lambda的作用就是简化代码，使得代码更加整洁。</p>
-<h2 id="（二）函数式接口"><a href="#（二）函数式接口" class="headerlink" title="（二）函数式接口"></a>（二）函数式接口</h2><p>所谓的ＳＡＭ接口即该接口中只有一个抽象方法需要实现，当然接口可以包含其他非抽象方法。例如：</p>
-<p>java.lang.Runnable : public void run()；</p>
-<p>java.lang.Comparable<T> :public int comparaTo(T t);</p>
-<p>java.util.Comparable<T>: public int compare(T t1,T t2);</p>
-<p>java.lang.Iterator : public Iterator iterator()</p>
-<p>java.lang.reflect.InvocationHandle : public Object invoke (Object proxy,Method method,Object[] args);</p>
-<p>java.io.FileFliter : public boolean accept(File pathname);</p>
-<p> 按理说只要符合SAM特征的接口都是函数式接口，但为了强化这个接口是函数式接口，JDK1.8以后建议把这样的接口上添加一个注解@FunctionalInterface,但并不是所有的SAM 接口都添加该注释。</p>
-<p>如果没有加该注解标记的接口，表示将来可能会增加第二个抽象方法，可能会变为非SAM接口，建议这种接口谨慎使用Lambda表达式。建议只给拥有该注解的接口运用Lambda表达式。</p>
-<h2 id="（三）函数式接口的分类"><a href="#（三）函数式接口的分类" class="headerlink" title="（三）函数式接口的分类"></a>（三）函数式接口的分类</h2><p>JDK1.8之后增加了一部分包，其中java.util.Fungction包，函数式接口是Lambda表达式和方法引用的目标类型</p>
-<p>只要分为四大类 </p>
-<p>1、消费型接口（Consumer）</p>
-<p>​    所有的接口都是以”Consumer“结尾，这类接口的特点是，它的抽象方法：有参无返回值</p>
-<p>2、供给型接口（Supplier）</p>
-<p>​    这类接口的特点是，他的抽象方法：无参有返回值</p>
-<p>3、判断型类型（Predicate）</p>
-<p>​    这类接口的特点是，他的抽象方法：Boolean test（有参），文论你给我什么参数，都是用来判断条件的，结果只有true 和 false</p>
-<p>4、功能型接口（Function）</p>
-<p>​    这类接口的特点是，他的抽象方法：有参有返回值</p>
-<p>在java.util.function包中提供了以后开发中能够遇到的所有函数式接口的类型，对于抽象方法是：无参无返回值“的形况，因为比较少用，所以没有提及，但是可以自己进行声明。而其它接口，基本上不需要自己进行声明，直接用该包里提供的就可以</p>
-<h2 id="（四）消费型接口"><a href="#（四）消费型接口" class="headerlink" title="（四）消费型接口"></a>（四）消费型接口</h2><h3 id="1、最基本的代表"><a href="#1、最基本的代表" class="headerlink" title="1、最基本的代表"></a>1、最基本的代表</h3><p>​    Consumer<T> ：void accept （T t）</p>
-<p>例如：java.lang.Collection系列的集合在JDK1.8之后添加了forEach方法</p>
-<h3 id="2、其他的变形"><a href="#2、其他的变形" class="headerlink" title="2、其他的变形"></a>2、其他的变形</h3><p>​    BiConsumer&lt;T,U&gt; : void accept (T t,U u);</p>
-<p>​    DoubleConsumer : void accept (double value);</p>
-<p>​    IntConsumer : void accept (int value);</p>
-<p>​    LongConsumer : void accept(long value);</p>
-<p>​    ObjDoubleConsumer<T> : void accept(T t, double value);</p>
-<p>​    ObjIntConsumer<T> : void accept (T t,int value);</p>
-<p>​    ObjLongConsumer<T> : void accept(T t, long value);</p>
-<h2 id="（五）供给型接口"><a href="#（五）供给型接口" class="headerlink" title="（五）供给型接口"></a>（五）供给型接口</h2><p>​    抽象方法：无参有返回值</p>
-<h3 id="1、最基本的代表-1"><a href="#1、最基本的代表-1" class="headerlink" title="1、最基本的代表"></a>1、最基本的代表</h3><p>​    Supplier<T> : T get();</p>
-<p>java.util.Stream包Stream类型</p>
-<p>​    static <T> Stream<T> generat (Supplier<T> s)</p>
-<h3 id="2、其他的变形-1"><a href="#2、其他的变形-1" class="headerlink" title="2、其他的变形"></a>2、其他的变形</h3><p>BooleanSupplier :  boolean getAsBoolean();</p>
-<p>DoubleSupplier : double getAsDouble();</p>
-<p>IntSupplier : int getAsInt();</p>
-<p>LongSupplier : Long getAsLong();</p>
-<h2 id="（六）判断型接口"><a href="#（六）判断型接口" class="headerlink" title="（六）判断型接口"></a>（六）判断型接口</h2><p>抽象方法：Boolean test （参数）</p>
-<h3 id="1、最基本的代表-2"><a href="#1、最基本的代表-2" class="headerlink" title="1、最基本的代表"></a>1、最基本的代表</h3><p>Predicate<T> : boolean test (T t);</p>
-<p>例如：java.util.Collection<E></p>
-<p>​    default boolean removeIf (predicate&lt;? super E&gt; filter);</p>
-<h3 id="2、其他的变形-2"><a href="#2、其他的变形-2" class="headerlink" title="2、其他的变形"></a>2、其他的变形</h3><p>BiPredicate&lt;T,U&gt; : boolean test (T t,U u);</p>
-<p>DoublePredicate : boolean test(double value);</p>
-<p>IntPredicate : boolean test (int value);</p>
-<p>Lonpredicate : boolean test (long value);</p>
-<h2 id="（七）功能型接口"><a href="#（七）功能型接口" class="headerlink" title="（七）功能型接口"></a>（七）功能型接口</h2><p>抽象方法：有参数有返回值</p>
-<h3 id="1、最基本的代表-3"><a href="#1、最基本的代表-3" class="headerlink" title="1、最基本的代表"></a>1、最基本的代表</h3><p>Function &lt;T,R&gt; R apply(T t)</p>
-<h3 id="2、其他变形"><a href="#2、其他变形" class="headerlink" title="2、其他变形"></a>2、其他变形</h3><p>!太多了</p>
-<p>UnaryOperator <T>  : T apply (T t)；一元的，传入的类型和返回的类型相同</p>
-<p>DoubleFunction<R>  : R applyAsDouble (double value)</p>
-<p>ToDoubleFunction<T> : double applyAsDouble (T t);</p>
-<p>DoubleToIntFunction : int applyAsInt (double value);</p>
-<p>DoubleUnaryOperator double applyAsDouble (double value);</p>
-<p>以此类推，还有int和long类型的变形</p>
-<p>形参不止一个：</p>
-<p>BiFunction&lt;T,U,R&gt; : R apply (T t,U u);</p>
-<p>BinaryOperator<T> : T apply (T t,T u);</p>
-<p>ToDoubleBiFunction&lt;T,U&gt;  : double   applyAsDouble (T t,U u);</p>
-<p>DoubleBinaryFunction&lt;T,U&gt; : double applyAsDouble(double t,double u);</p>
-<h2 id="（八）Lambda表达式语法规则"><a href="#（八）Lambda表达式语法规则" class="headerlink" title="（八）Lambda表达式语法规则"></a>（八）Lambda表达式语法规则</h2><p>Lambda表达式事给函数式接口的形参或者变量赋值时用的，为了给这个函数式接口的抽象方法传递代码用的</p>
-<p>语法格式： （形参列表）-&gt; {lambda体}</p>
-<p>（形参列表）就是函数式接口的抽象方法的形参列表</p>
-<p>{lambda体）就是函数式接口的抽象方法的方法体</p>
-<p>说明：</p>
-<p>​    1、当（形参列表）为空参时，（）不可以省略</p>
-<p>​    2、当（形参列表）是非空参时，并且类型似乎确定的挥着可以判断的，那么形参的数据类型可以省略</p>
-<p>​    3、当（形参列表）是非空的时，并且只有一个形参，并且类型也省略了，那么（）可以省略，如果类型没有省略，（）不可以省略</p>
-<p>​    4、如果{lambda体}不止一个语句，那么{}不能省略，并且每一句结束都要以；结尾</p>
-<p>​    5、如果{lambda体}只有一个语句的时候，{}和；要同时省略</p>
-<p>​    6、如果该函数式接口的抽象方法的返回值类型不是void，那么{lambda体}里面要有return 返回值语句；</p>
-<p>​    7、如果{lambda体}中只有一个{return 返回值；}语句时，此时{}和；和return 都同时省略</p>
-<h2 id="（九）方法引用和构造器引用"><a href="#（九）方法引用和构造器引用" class="headerlink" title="（九）方法引用和构造器引用"></a>（九）方法引用和构造器引用</h2><p>方法引用和构造器的引用是对Lambda表达式的再次简化的一个语法</p>
-<p>当lambda表达式的Lambda体满足一些情况时，可以使用方法引用或者构造器引用再次简化</p>
-<p>​    （1）当lambda体式通过调用一个先有的类、对象的先有的方法来完成功能能时</p>
-<p>​    （2）并且这个方法的形参列表 和返回值类型，与该Lambda表达式所赋值的函数式接口的抽象方法的形参列表和返回值类型对应</p>
-<h3 id="1、形式："><a href="#1、形式：" class="headerlink" title="1、形式："></a>1、形式：</h3><p>​    （1）对象 ：：实例方法名</p>
-<p>​    （2）类名 ：：静态方法名</p>
-<p>​    （3）类名 ：：实例方法名</p>
-<p>​    （4）类名 ：：new –&gt;构造器引用</p>
-<p>​    （5）数组类型 ：：new –&gt;特殊的构造器引用，数组的构造器引用</p>
-<h3 id="2、语法格式"><a href="#2、语法格式" class="headerlink" title="2、语法格式"></a>2、语法格式</h3><p>​    类名或对象名 ：：方法名/new </p>
+      <p>​        怎么说呢，这个博客我搭了整整一天，其实时间主要浪费在了找Git库，原本在GitHub上完成了部署，然后由于GitHub乌龟似的速度以及需要翻墙才能达到预期的效果，所以我决定在国内的Git库中进行部署例如（Gitee，Coding），显而易见，我失败了，并没有成功地在国内Git库中部署。</p>
+<p>​        我在一开始最先尝试的是Gitee，不得不说作为“国内版GitHub”，Gitee的确有一定的潜力，而且由于服务器在国内，所以部署在这个上面速度飞起。在部署过程中遇到的第一个问题就是css无法正常显示，然后问了问度娘，顺利解决（url 添加自己的网站域名，然后在root下更新根目录）但后来问题又出现了，自己上传到Gitee中的图片无法正常解析，这个问题几乎困扰了我一下午，然后各种查资料逛论坛和别人的博客，最后以失败告终，不知道是别人没有遇到过这个问题还是自己的语文表达能力较差，始终没有找到合适的解决方案，以后有时间并且进一步了解web后，在寻找解决方案，毕竟部署到国内确实快的很。</p>
+<p>​        后来我看到有的大佬推荐了Coding，也是一个国内的Git管理仓，然而，可能是自己对GIt的不熟悉，导致并没有找到Coding Page的启动位置，然后也是查询无果，又放弃了这个。</p>
+<p>​        其实我也有想过租个服务器什么的，把网站搭到服务器上面，后来又觉得自己半途而废的尿性，果断放弃了，而且还要Money。其实主要原因是自己建立这个主要是写博客用的，也用不到防黑客啊之类的，而且本身自己对Web开发也属于初探阶段，前期投入太多的精力也有些不合适。</p>
+<p>​    害，既然花了这么长时间建了博客还是不要浪费的好。抓紧提升技术，把博客建的再好看些。以后这个博客就分享分享自己学习内容啊，生活经历啊，还有旅游啥的，奥里给</p>
 
       
       <!-- reward -->
@@ -269,14 +185,14 @@ var _hmt = _hmt || [];
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/ck8fm7qbo00012gul7ihh7938/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/ck8jjn1ln000kn8ulf6x160ji/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BF%83%E5%BE%97/" rel="tag">心得</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
 
 
     </footer>
@@ -287,10 +203,19 @@ var _hmt = _hmt || [];
   
   <nav class="article-nav">
     
+      <a href="/2020/ck8jjn1l90007n8ul8yjx3s0x/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Java学习笔记之Lambda
+          
+        </div>
+      </a>
     
-      <a href="/2020/ck8fm7qck000a2gulfdb4f95n/" class="article-nav-link">
+    
+      <a href="/2020/about/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">第一次搭建博客心得</div>
+        <div class="article-nav-title">About me</div>
       </a>
     
   </nav>
