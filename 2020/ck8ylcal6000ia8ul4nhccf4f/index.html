@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    在VM上为CentOS7设置静态IP |  Sober
+    Java学习笔记之Lambda |  Sober
   </title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   
@@ -51,7 +51,7 @@ var _hmt = _hmt || [];
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-在VM上对CentOs7设置静态ip" class="article article-type-post" itemscope
+  <article id="post-Java-Lambda" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -59,7 +59,7 @@ var _hmt = _hmt || [];
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  在VM上为CentOS7设置静态IP
+  Java学习笔记之Lambda
 </h1>
  
 
@@ -68,12 +68,12 @@ var _hmt = _hmt || [];
 
     
     <div class="article-meta">
-      <a href="/2020/ck8jjn1l40003n8ulablxactm/" class="article-date">
-  <time datetime="2020-04-03T00:47:15.000Z" itemprop="datePublished">2020-04-03</time>
+      <a href="/2020/ck8ylcal6000ia8ul4nhccf4f/" class="article-date">
+  <time datetime="2020-03-31T08:01:18.000Z" itemprop="datePublished">2020-03-31</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    <a class="article-category-link" href="/categories/Java/">Java</a>
   </div>
 
       
@@ -83,7 +83,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">563字</span>
+            <span class="post-count">1.7k字</span>
         </span>
     </span>
 
@@ -92,7 +92,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">2分钟</span>
+            <span class="post-count">6分钟</span>
         </span>
     </span>
 </div>
@@ -117,33 +117,93 @@ var _hmt = _hmt || [];
       
 
       
-      <h1 id="一、为什么要设置静态IP"><a href="#一、为什么要设置静态IP" class="headerlink" title="一、为什么要设置静态IP"></a>一、为什么要设置静态IP</h1><p>​    众所周知，平常的IP都是自动分配的，你每次登录用户的时候都会自动分配一个不同的IP，而一般对于Linux系统来讲，我们都是通过xshell等远程管理工具进行管理，因此设置一个静态IP有助于自己远程管理Linux系统</p>
-<h1 id="二、更改VM-中虚拟网络编辑器设置"><a href="#二、更改VM-中虚拟网络编辑器设置" class="headerlink" title="二、更改VM 中虚拟网络编辑器设置"></a>二、更改VM 中虚拟网络编辑器设置</h1><p>​    首先打开VM的编辑页面，然后选择虚拟网络编辑器。</p>
-<p><img src="https://i.loli.net/2020/04/03/aO3Tb9j8LlydEMG.png" alt="7_ZF5KZBE~_JAS____O_SKJ.png"></p>
-<p><img src="https://i.loli.net/2020/04/03/wVQoWaSKN6b23jp.png" alt="Annotation 2020-04-03 085644.png"></p>
-<p>​    选择右下角的更改设置（需要管理员权限）</p>
-<p><img src="https://i.loli.net/2020/04/03/MYKG7lwF53cpuZE.png" alt="_LDRZP6WFOWH_CQ__F9GJ_F.png"></p>
-<p>​    然后选择虚拟网卡VMnet8，然后VMnet信息改为NAT模式，然后设置子网IP和子网掩码</p>
-<p><img src="https://i.loli.net/2020/04/03/6frYtd7JX9iqGg8.png" alt="O_92VNL@`YU`_U_7Z_B37C9.png"></p>
-<p>​    进入NAT设置</p>
-<p><img src="https://i.loli.net/2020/04/03/U5pahrYkO9Ty1CK.png" alt="_D74KB7CZ146VQ5V3NF01BT.png"></p>
-<p>​    设置网关，网关前三个字段一定要和自己的子网IP的前三个字段一样，最后那个字段随便取，但一定要记住这个网关IP，后面在CentOS中设置的时候需要用到这个IP</p>
-<p><img src="https://i.loli.net/2020/04/03/Yn43aplArLDXq8I.png" alt="A_YD_DW_OV`GQKIUBI6`_W6.png"></p>
-<p>​    打开自己的CentOS，然后找到自己的网卡文件(vim 的使用自行百度)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens33</span><br></pre></td></tr></table></figure>
-
-<p>配置文件如下图</p>
-<p><img src="https://i.loli.net/2020/04/03/QvEt7VXiRlWI81q.png" alt="_1MR7C_HE8__N_I29_9X664.png"></p>
-<p><img src="https://i.loli.net/2020/04/03/siTtcI19qUbBlHP.png" alt="IS6Q0CP_7W_7__4_@29___2.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">TYPE&#x3D;Ethernet</span><br><span class="line">PROXY_METHOD&#x3D;none</span><br><span class="line">BROWSER_ONLY&#x3D;no</span><br><span class="line">BOOTPROTO&#x3D;static #将dhcp改为static，dhcp是动态分配IP协议的意思</span><br><span class="line">DEFROUTE&#x3D;yes</span><br><span class="line">IPV4_FAILURE_FATAL&#x3D;no</span><br><span class="line">IPV6INIT&#x3D;yes</span><br><span class="line">IPV6_AUTOCONF&#x3D;yes</span><br><span class="line">IPV6_DEFROUTE&#x3D;yes</span><br><span class="line">IPV6_FAILURE_FATAL&#x3D;no</span><br><span class="line">IPV6_ADDR_GEN_MODE&#x3D;stable-privacy</span><br><span class="line">NAME&#x3D;ens33</span><br><span class="line">UUID&#x3D;0c8350ca-5130-4f18-8be3-ce5568332dbf</span><br><span class="line">DEVICE&#x3D;ens33</span><br><span class="line">ONBOOT&#x3D;yes #设置为开机自启动</span><br><span class="line">#----下面为自己的添加的信息-------#</span><br><span class="line">IPADDR&#x3D;192.168.127.100 #设置自己想要设置的静态IP，不过IP前三字段一定要与子网IP前三字段保持一致</span><br><span class="line">GATEWAY&#x3D;192.168.127.2 #这里设置的网关与你之前设置的网关要保持一致</span><br><span class="line">NETMASK&#x3D;255.255.255.0 #设置子网掩码</span><br><span class="line">DNS1&#x3D;8.8.8.8 #Google的DNS服务器</span><br><span class="line">DNS2&#x3D;114.114.114.114 #国内中国移动、电信、网通的通用DNS服务器</span><br></pre></td></tr></table></figure>
-
-<p>​    当所有文件配置完成后,输入下面命令重启网络服务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service network start</span><br></pre></td></tr></table></figure>
-
-<p>​    最后检测是否能正确联网,ping一下百度即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
-
-<p>​    如果在配置过程中发现了还是不能联网,建议将虚拟网络编辑器还原 默认设置后重新进行配置(我就是这样的)</p>
+      <p>﻿# lambda表达式</p>
+<h2 id="（一）Lambda表达式概述"><a href="#（一）Lambda表达式概述" class="headerlink" title="（一）Lambda表达式概述"></a>（一）Lambda表达式概述</h2><p>以前调用Java方法时，实参必须是一个进本数据类型或者是一个对象，现在可以给一些引用数据的形参，传“一段代码”，而不是“一个对象”。这段代码是一个函数（方法）的方法体。</p>
+<p>Lambda表达式可以极大的减少代码的冗余，同时可读性也好过冗长的匿名类</p>
+<p>引入函数式风格，但并不是所有的接口都可以运用lambda表达式，只有实现SAM（single abstract method，函数式接口）接口才能实现此方法，只含有单独的抽象方法，但是可以含有默认方法和静态方法等。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>（1）只有函数式接口才能使用lambda表达式</p>
+<p>（2）Lambda的作用就是简化代码，使得代码更加整洁。</p>
+<h2 id="（二）函数式接口"><a href="#（二）函数式接口" class="headerlink" title="（二）函数式接口"></a>（二）函数式接口</h2><p>所谓的ＳＡＭ接口即该接口中只有一个抽象方法需要实现，当然接口可以包含其他非抽象方法。例如：</p>
+<p>java.lang.Runnable : public void run()；</p>
+<p>java.lang.Comparable<T> :public int comparaTo(T t);</p>
+<p>java.util.Comparable<T>: public int compare(T t1,T t2);</p>
+<p>java.lang.Iterator : public Iterator iterator()</p>
+<p>java.lang.reflect.InvocationHandle : public Object invoke (Object proxy,Method method,Object[] args);</p>
+<p>java.io.FileFliter : public boolean accept(File pathname);</p>
+<p> 按理说只要符合SAM特征的接口都是函数式接口，但为了强化这个接口是函数式接口，JDK1.8以后建议把这样的接口上添加一个注解@FunctionalInterface,但并不是所有的SAM 接口都添加该注释。</p>
+<p>如果没有加该注解标记的接口，表示将来可能会增加第二个抽象方法，可能会变为非SAM接口，建议这种接口谨慎使用Lambda表达式。建议只给拥有该注解的接口运用Lambda表达式。</p>
+<h2 id="（三）函数式接口的分类"><a href="#（三）函数式接口的分类" class="headerlink" title="（三）函数式接口的分类"></a>（三）函数式接口的分类</h2><p>JDK1.8之后增加了一部分包，其中java.util.Fungction包，函数式接口是Lambda表达式和方法引用的目标类型</p>
+<p>只要分为四大类 </p>
+<p>1、消费型接口（Consumer）</p>
+<p>​    所有的接口都是以”Consumer“结尾，这类接口的特点是，它的抽象方法：有参无返回值</p>
+<p>2、供给型接口（Supplier）</p>
+<p>​    这类接口的特点是，他的抽象方法：无参有返回值</p>
+<p>3、判断型类型（Predicate）</p>
+<p>​    这类接口的特点是，他的抽象方法：Boolean test（有参），文论你给我什么参数，都是用来判断条件的，结果只有true 和 false</p>
+<p>4、功能型接口（Function）</p>
+<p>​    这类接口的特点是，他的抽象方法：有参有返回值</p>
+<p>在java.util.function包中提供了以后开发中能够遇到的所有函数式接口的类型，对于抽象方法是：无参无返回值“的形况，因为比较少用，所以没有提及，但是可以自己进行声明。而其它接口，基本上不需要自己进行声明，直接用该包里提供的就可以</p>
+<h2 id="（四）消费型接口"><a href="#（四）消费型接口" class="headerlink" title="（四）消费型接口"></a>（四）消费型接口</h2><h3 id="1、最基本的代表"><a href="#1、最基本的代表" class="headerlink" title="1、最基本的代表"></a>1、最基本的代表</h3><p>​    Consumer<T> ：void accept （T t）</p>
+<p>例如：java.lang.Collection系列的集合在JDK1.8之后添加了forEach方法</p>
+<h3 id="2、其他的变形"><a href="#2、其他的变形" class="headerlink" title="2、其他的变形"></a>2、其他的变形</h3><p>​    BiConsumer&lt;T,U&gt; : void accept (T t,U u);</p>
+<p>​    DoubleConsumer : void accept (double value);</p>
+<p>​    IntConsumer : void accept (int value);</p>
+<p>​    LongConsumer : void accept(long value);</p>
+<p>​    ObjDoubleConsumer<T> : void accept(T t, double value);</p>
+<p>​    ObjIntConsumer<T> : void accept (T t,int value);</p>
+<p>​    ObjLongConsumer<T> : void accept(T t, long value);</p>
+<h2 id="（五）供给型接口"><a href="#（五）供给型接口" class="headerlink" title="（五）供给型接口"></a>（五）供给型接口</h2><p>​    抽象方法：无参有返回值</p>
+<h3 id="1、最基本的代表-1"><a href="#1、最基本的代表-1" class="headerlink" title="1、最基本的代表"></a>1、最基本的代表</h3><p>​    Supplier<T> : T get();</p>
+<p>java.util.Stream包Stream类型</p>
+<p>​    static <T> Stream<T> generat (Supplier<T> s)</p>
+<h3 id="2、其他的变形-1"><a href="#2、其他的变形-1" class="headerlink" title="2、其他的变形"></a>2、其他的变形</h3><p>BooleanSupplier :  boolean getAsBoolean();</p>
+<p>DoubleSupplier : double getAsDouble();</p>
+<p>IntSupplier : int getAsInt();</p>
+<p>LongSupplier : Long getAsLong();</p>
+<h2 id="（六）判断型接口"><a href="#（六）判断型接口" class="headerlink" title="（六）判断型接口"></a>（六）判断型接口</h2><p>抽象方法：Boolean test （参数）</p>
+<h3 id="1、最基本的代表-2"><a href="#1、最基本的代表-2" class="headerlink" title="1、最基本的代表"></a>1、最基本的代表</h3><p>Predicate<T> : boolean test (T t);</p>
+<p>例如：java.util.Collection<E></p>
+<p>​    default boolean removeIf (predicate&lt;? super E&gt; filter);</p>
+<h3 id="2、其他的变形-2"><a href="#2、其他的变形-2" class="headerlink" title="2、其他的变形"></a>2、其他的变形</h3><p>BiPredicate&lt;T,U&gt; : boolean test (T t,U u);</p>
+<p>DoublePredicate : boolean test(double value);</p>
+<p>IntPredicate : boolean test (int value);</p>
+<p>Lonpredicate : boolean test (long value);</p>
+<h2 id="（七）功能型接口"><a href="#（七）功能型接口" class="headerlink" title="（七）功能型接口"></a>（七）功能型接口</h2><p>抽象方法：有参数有返回值</p>
+<h3 id="1、最基本的代表-3"><a href="#1、最基本的代表-3" class="headerlink" title="1、最基本的代表"></a>1、最基本的代表</h3><p>Function &lt;T,R&gt; R apply(T t)</p>
+<h3 id="2、其他变形"><a href="#2、其他变形" class="headerlink" title="2、其他变形"></a>2、其他变形</h3><p>!太多了</p>
+<p>UnaryOperator <T>  : T apply (T t)；一元的，传入的类型和返回的类型相同</p>
+<p>DoubleFunction<R>  : R applyAsDouble (double value)</p>
+<p>ToDoubleFunction<T> : double applyAsDouble (T t);</p>
+<p>DoubleToIntFunction : int applyAsInt (double value);</p>
+<p>DoubleUnaryOperator double applyAsDouble (double value);</p>
+<p>以此类推，还有int和long类型的变形</p>
+<p>形参不止一个：</p>
+<p>BiFunction&lt;T,U,R&gt; : R apply (T t,U u);</p>
+<p>BinaryOperator<T> : T apply (T t,T u);</p>
+<p>ToDoubleBiFunction&lt;T,U&gt;  : double   applyAsDouble (T t,U u);</p>
+<p>DoubleBinaryFunction&lt;T,U&gt; : double applyAsDouble(double t,double u);</p>
+<h2 id="（八）Lambda表达式语法规则"><a href="#（八）Lambda表达式语法规则" class="headerlink" title="（八）Lambda表达式语法规则"></a>（八）Lambda表达式语法规则</h2><p>Lambda表达式事给函数式接口的形参或者变量赋值时用的，为了给这个函数式接口的抽象方法传递代码用的</p>
+<p>语法格式： （形参列表）-&gt; {lambda体}</p>
+<p>（形参列表）就是函数式接口的抽象方法的形参列表</p>
+<p>{lambda体）就是函数式接口的抽象方法的方法体</p>
+<p>说明：</p>
+<p>​    1、当（形参列表）为空参时，（）不可以省略</p>
+<p>​    2、当（形参列表）是非空参时，并且类型似乎确定的挥着可以判断的，那么形参的数据类型可以省略</p>
+<p>​    3、当（形参列表）是非空的时，并且只有一个形参，并且类型也省略了，那么（）可以省略，如果类型没有省略，（）不可以省略</p>
+<p>​    4、如果{lambda体}不止一个语句，那么{}不能省略，并且每一句结束都要以；结尾</p>
+<p>​    5、如果{lambda体}只有一个语句的时候，{}和；要同时省略</p>
+<p>​    6、如果该函数式接口的抽象方法的返回值类型不是void，那么{lambda体}里面要有return 返回值语句；</p>
+<p>​    7、如果{lambda体}中只有一个{return 返回值；}语句时，此时{}和；和return 都同时省略</p>
+<h2 id="（九）方法引用和构造器引用"><a href="#（九）方法引用和构造器引用" class="headerlink" title="（九）方法引用和构造器引用"></a>（九）方法引用和构造器引用</h2><p>方法引用和构造器的引用是对Lambda表达式的再次简化的一个语法</p>
+<p>当lambda表达式的Lambda体满足一些情况时，可以使用方法引用或者构造器引用再次简化</p>
+<p>​    （1）当lambda体式通过调用一个先有的类、对象的先有的方法来完成功能能时</p>
+<p>​    （2）并且这个方法的形参列表 和返回值类型，与该Lambda表达式所赋值的函数式接口的抽象方法的形参列表和返回值类型对应</p>
+<h3 id="1、形式："><a href="#1、形式：" class="headerlink" title="1、形式："></a>1、形式：</h3><p>​    （1）对象 ：：实例方法名</p>
+<p>​    （2）类名 ：：静态方法名</p>
+<p>​    （3）类名 ：：实例方法名</p>
+<p>​    （4）类名 ：：new –&gt;构造器引用</p>
+<p>​    （5）数组类型 ：：new –&gt;特殊的构造器引用，数组的构造器引用</p>
+<h3 id="2、语法格式"><a href="#2、语法格式" class="headerlink" title="2、语法格式"></a>2、语法格式</h3><p>​    类名或对象名 ：：方法名/new </p>
 
       
       <!-- reward -->
@@ -209,14 +269,14 @@ var _hmt = _hmt || [];
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/ck8jjn1l40003n8ulablxactm/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2020/ck8ylcal6000ia8ul4nhccf4f/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
 
 
     </footer>
@@ -227,10 +287,19 @@ var _hmt = _hmt || [];
   
   <nav class="article-nav">
     
+      <a href="/2020/ck8ylcaka000ea8ul1gzdbulr/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            在VM上为CentOS7设置静态IP
+          
+        </div>
+      </a>
     
-      <a href="/2020/ck8jjn1l90007n8ul8yjx3s0x/" class="article-nav-link">
+    
+      <a href="/2020/ck8ylcal2000ga8ul0xbv481k/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Java学习笔记之Lambda</div>
+        <div class="article-nav-title">第一次搭建博客心得</div>
       </a>
     
   </nav>
