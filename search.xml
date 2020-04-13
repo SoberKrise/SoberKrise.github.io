@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>HTML学习</title>
-    <url>/2020/ck8ylcaby0000a8uldq1f3myn/</url>
+    <url>/2020/ck8ylplrt0000fwul5zvhhx8i/</url>
     <content><![CDATA[<h1 id="一、HEML语言初步认识"><a href="#一、HEML语言初步认识" class="headerlink" title="一、HEML语言初步认识"></a>一、HEML语言初步认识</h1><p>​    Hyper Text Markup Language （超文本标记语言） 简写：HTML<br>​    HTML 通过标签来标记要显示的网页中的各个部分。网页文件本身是一种文本文件，<br>通过在文本文件中添加标记符，可以告诉浏览器如何显示其中的内容（如：文字如何处理，画<br>面如何安排，图片如何显示等），学习HTML的主要原因是想更加了解JavaWeb的开发，为后面学Java web和Android开发打基础</p>
 <h2 id="HTML语言的基本认识"><a href="#HTML语言的基本认识" class="headerlink" title="HTML语言的基本认识"></a>HTML语言的基本认识</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span><span class="comment">&lt;!-- 约束，声明 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span><span class="comment">&lt;!-- html标签标识html开始， lang = “zh_CN”表示中文  html标签中一般分为两部分，分别是:head 和body  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="comment">&lt;!-- 表示头部信息，一般包含三部分内容，title，css样式，js代码 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span><span class="comment">&lt;!-- 表示当前页面使用UTF-8字符集 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span><span class="comment">&lt;!-- 表示标题 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- bgcolor 是背景颜色属性 是body的基础属性</span></span><br><span class="line"><span class="comment">    onclick表示单击时间</span></span><br><span class="line"><span class="comment">    alter()是JavaScript语言提供的一个警告框函数</span></span><br><span class="line"><span class="comment">    它可以接受任意参数，参数就是警告框的函数信息</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">bgcolor</span>=<span class="string">"blue"</span> <span class="attr">onclick</span>=<span class="string">"alert('你真帅')"</span>&gt;</span><span class="comment">&lt;!-- body标签是整个html的显示的主体内容 --&gt;</span></span><br><span class="line">    hello</span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"alert('你好')"</span> &gt;</span> 点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -63,7 +63,7 @@
   </entry>
   <entry>
     <title>在VM上为CentOS7设置静态IP</title>
-    <url>/2020/ck8ylcaka000ea8ul1gzdbulr/</url>
+    <url>/2020/ck8ylpls30007fwulgq7ofmpw/</url>
     <content><![CDATA[<h1 id="一、为什么要设置静态IP"><a href="#一、为什么要设置静态IP" class="headerlink" title="一、为什么要设置静态IP"></a>一、为什么要设置静态IP</h1><p>​    众所周知，平常的IP都是自动分配的，你每次登录用户的时候都会自动分配一个不同的IP，而一般对于Linux系统来讲，我们都是通过xshell等远程管理工具进行管理，因此设置一个静态IP有助于自己远程管理Linux系统</p>
 <h1 id="二、更改VM-中虚拟网络编辑器设置"><a href="#二、更改VM-中虚拟网络编辑器设置" class="headerlink" title="二、更改VM 中虚拟网络编辑器设置"></a>二、更改VM 中虚拟网络编辑器设置</h1><p>​    首先打开VM的编辑页面，然后选择虚拟网络编辑器。</p>
 <p><img src="https://i.loli.net/2020/04/03/aO3Tb9j8LlydEMG.png" alt="7_ZF5KZBE~_JAS____O_SKJ.png"></p>
@@ -96,13 +96,13 @@
         <category>学习</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
         <tag>学习</tag>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
     <title>Java学习笔记之Lambda</title>
-    <url>/2020/ck8ylcal6000ia8ul4nhccf4f/</url>
+    <url>/2020/ck8ylplry0002fwulftyte6wr/</url>
     <content><![CDATA[<p>﻿# lambda表达式</p>
 <h2 id="（一）Lambda表达式概述"><a href="#（一）Lambda表达式概述" class="headerlink" title="（一）Lambda表达式概述"></a>（一）Lambda表达式概述</h2><p>以前调用Java方法时，实参必须是一个进本数据类型或者是一个对象，现在可以给一些引用数据的形参，传“一段代码”，而不是“一个对象”。这段代码是一个函数（方法）的方法体。</p>
 <p>Lambda表达式可以极大的减少代码的冗余，同时可读性也好过冗长的匿名类</p>
@@ -201,7 +201,7 @@
   </entry>
   <entry>
     <title>第一次搭建博客心得</title>
-    <url>/2020/ck8ylcal2000ga8ul0xbv481k/</url>
+    <url>/2020/ck8ylpls10005fwulcqwohz0d/</url>
     <content><![CDATA[<p>​        怎么说呢，这个博客我搭了整整一天，其实时间主要浪费在了找Git库，原本在GitHub上完成了部署，然后由于GitHub乌龟似的速度以及需要翻墙才能达到预期的效果，所以我决定在国内的Git库中进行部署例如（Gitee，Coding），显而易见，我失败了，并没有成功地在国内Git库中部署。</p>
 <p>​        我在一开始最先尝试的是Gitee，不得不说作为“国内版GitHub”，Gitee的确有一定的潜力，而且由于服务器在国内，所以部署在这个上面速度飞起。在部署过程中遇到的第一个问题就是css无法正常显示，然后问了问度娘，顺利解决（url 添加自己的网站域名，然后在root下更新根目录）但后来问题又出现了，自己上传到Gitee中的图片无法正常解析，这个问题几乎困扰了我一下午，然后各种查资料逛论坛和别人的博客，最后以失败告终，不知道是别人没有遇到过这个问题还是自己的语文表达能力较差，始终没有找到合适的解决方案，以后有时间并且进一步了解web后，在寻找解决方案，毕竟部署到国内确实快的很。</p>
 <p>​        后来我看到有的大佬推荐了Coding，也是一个国内的Git管理仓，然而，可能是自己对GIt的不熟悉，导致并没有找到Coding Page的启动位置，然后也是查询无果，又放弃了这个。</p>
